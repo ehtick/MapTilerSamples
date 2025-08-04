@@ -6,14 +6,11 @@ Code examples of how to use the [MapTiler Maps API](https://www.maptiler.com/clo
 
 ### MapTiler Cloud
 
-- [Choropleth geojson - Leaflet](https://labs.maptiler.com/samples/cloud/choropleth-geojson-leaflet/)
-- [Choropleth geojson - MapLibre](https://labs.maptiler.com/samples/cloud/choropleth-geojson-maplibre/)
-- [Choropleth geojson - OpenLayers](https://labs.maptiler.com/samples/cloud/choropleth-geojson-openlayers/)
-- [Choropleth map basic- MapLibre](https://labs.maptiler.com/samples/cloud/choropleth-map-basic/)
-- [Countries with own data - MapLibre](https://labs.maptiler.com/samples/cloud/countries-with-own-data/)
-- [Elevation profile- Mapbox GL](https://labs.maptiler.com/samples/cloud/elevation-profile/)
-- [Reverse geocoding - MapLibre](https://labs.maptiler.com/samples/cloud/reverse-geocoding-maplibre/)
-- [WMTS - OpenLayers](https://labs.maptiler.com/samples/cloud/wmts-openlayers/)
+- [Choropleth map basic - docs](https://docs.maptiler.com/sdk-js/examples/countries-filter/)
+- [Choropleth geojson - Leaflet](https://labs.maptiler.com/samples/cloud/choropleth-geojson-leaflet/) - [docs](https://docs.maptiler.com/guides/maps-apis/maps-platform/zoomable-choropleth-map-from-geojson-with-leaflet/)
+- [Choropleth geojson - MapLibre](https://labs.maptiler.com/samples/cloud/choropleth-geojson-maplibre/) - [docs](https://docs.maptiler.com/guides/maps-apis/maps-platform/zoomable-choropleth-map-from-geojson-with-maplibre/)
+- [Choropleth geojson - OpenLayers](https://labs.maptiler.com/samples/cloud/choropleth-geojson-openlayers/) - [docs](https://docs.maptiler.com/guides/maps-apis/maps-platform/zoomable-choropleth-map-from-geojson-with-openlayers/)
+- [Countries with own data](https://labs.maptiler.com/samples/cloud/countries-with-own-data/) - [docs](https://docs.maptiler.com/guides/maps-apis/maps-platform/join-maptiler-countries-with-your-own-custom-data-and-make-a-choropleth-map/)
 
 ### Cesium
 
