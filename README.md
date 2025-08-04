@@ -20,10 +20,6 @@ Code examples of how to use the [MapTiler Maps API](https://www.maptiler.com/clo
 
 - [Coustom lidar](https://labs.maptiler.com/samples/cesium/custom-lidar/)
 
-## Maplibre
-
-- [MapLibre Terrain Demo](https://labs.maptiler.com/samples/maplibre/terrain/)
-
 ## Contributing
 
 Please create a folder per article or usecase in the product's folder. The website has an autobuild to https://labs.maptiler.com/samples/
