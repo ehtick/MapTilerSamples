@@ -10,7 +10,6 @@ Code examples of how to use the [MapTiler Maps API](https://www.maptiler.com/clo
 - [Choropleth geojson - MapLibre](https://labs.maptiler.com/samples/cloud/choropleth-geojson-maplibre/)
 - [Choropleth geojson - OpenLayers](https://labs.maptiler.com/samples/cloud/choropleth-geojson-openlayers/)
 - [Choropleth map basic- MapLibre](https://labs.maptiler.com/samples/cloud/choropleth-map-basic/)
-- [Countries dataset - MapLibre](https://labs.maptiler.com/samples/cloud/countries-dataset/)
 - [Countries with own data - MapLibre](https://labs.maptiler.com/samples/cloud/countries-with-own-data/)
 - [Elevation profile- Mapbox GL](https://labs.maptiler.com/samples/cloud/elevation-profile/)
 - [Reverse geocoding - MapLibre](https://labs.maptiler.com/samples/cloud/reverse-geocoding-maplibre/)
@@ -18,7 +17,7 @@ Code examples of how to use the [MapTiler Maps API](https://www.maptiler.com/clo
 
 ### Cesium
 
-- [Coustom lidar](https://labs.maptiler.com/samples/cesium/custom-lidar/)
+- [Custom lidar](https://labs.maptiler.com/samples/cesium/custom-lidar/) - [docs](https://docs.maptiler.com/guides/map-tiling-hosting/data-hosting/custom-lidar-data-and-cesium/)
 
 ## Contributing
 
