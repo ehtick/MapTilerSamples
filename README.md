@@ -20,12 +20,6 @@ Code examples of how to use the [MapTiler Maps API](https://www.maptiler.com/clo
 
 - [Coustom lidar](https://labs.maptiler.com/samples/cesium/custom-lidar/)
 
-### Web
-
-- [Geocoder component - MapLibre](https://labs.maptiler.com/samples/web/geocoder-component/)
-- [MapTiler terrain GLTF - Three.js](https://labs.maptiler.com/samples/web/threejs-gltf/)
-- [South America trip - MapTiler SDK helpers](https://labs.maptiler.com/samples/web/trip-sa/)
-
 ## Maplibre
 
 - [MapLibre Terrain Demo](https://labs.maptiler.com/samples/maplibre/terrain/)
