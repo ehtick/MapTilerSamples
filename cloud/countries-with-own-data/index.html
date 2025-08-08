@@ -40,20 +40,19 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6SD2VP" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <div id="map"></div>
-  <p><a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a
-      href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a></p>
-  <script>
-    var key = '1FhMwoUHOr81XFr4HGl4';
 
-    var map = new maptilersdk.Map({
+  <script>
+
+    maptilersdk.config.apiKey = '1FhMwoUHOr81XFr4HGl4'//! 'YOUR_MAPTILER_API_KEY_HERE';
+    const map = new maptilersdk.Map({
       container: 'map',
-      style: 'https://api.maptiler.com/maps/hybrid/style.json?key=' + key,
+      style: maptilersdk.MapStyle.HYBRID,
       center: [15.34, 49.77],
       zoom: 3
     });
 
-    // Data for visualization
-    var vizData = {
+    // Population data for visualization
+    const populationData = {
       "8": { "name": "Albania", "population": 2829741 },
       "40": { "name": "Austria", "population": 8932664 },
       "56": { "name": "Belgium", "population": 11566041 },
@@ -93,26 +92,26 @@
     };
 
     map.on('load', function () {
-      // Add MapTiler Countries dataset
-      map.addSource('statesData', {
+      // Add MapTiler Countries dataset https://docs.maptiler.com/schema/countries/
+      map.addSource('maptilerCountries', {
         type: 'vector',
-        url: 'https://api.maptiler.com/tiles/countries/tiles.json?key=' + key
+        url: 'https://api.maptiler.com/tiles/countries/tiles.json'
       });
 
       const layers = map.getStyle().layers;
       // Find the index of the first symbol layer in the map style
       // This approach works with our simple map styles for more advanced styles, e.g., Outdoor.
       // We recommend directly inserting the name of the last layer above your data.
-      // See the Learn more section below.
-      const firstSymbolId = layers.find(layer => layer.type === 'symbol').id;
+      // Learn how to do it https://docs.maptiler.com/sdk-js/examples/geojson-layer-in-stack/#learn-more
+      const firstLineId = layers.find(layer => layer.type === 'line').id;
 
       // Styling for countries layer with linear interpolation of data
       map.addLayer({
         id: 'countries',
         type: 'fill',
-        source: 'statesData',
+        source: 'maptilerCountries',
         'source-layer': 'administrative',
-        filter: ['==', 'level', 0],
+        filter: ['==', 'level', 0], // read more about MapTiler countries structure https://docs.maptiler.com/schema/countries/
         paint: {
           'fill-color':
             ['case',
@@ -121,36 +120,36 @@
               'rgba(0, 0, 0, 0)'
             ]
         }
-      }, firstSymbolId);
+      }, firstLineId);
 
       // Join the data to coresponding features
       function setStates(e) {
-        var countries = map.querySourceFeatures('statesData', {
+        const countries = map.querySourceFeatures('maptilerCountries', {
           sourceLayer: 'administrative',
           filter: ['all', ['==', 'level', 0]],
         });
 
         countries.forEach(function (row) {
-          if (row.id && vizData[row.id]) {
+          if (row.id && populationData[row.id]) {
             map.setFeatureState({
-              source: 'statesData',
+              source: 'maptilerCountries',
               sourceLayer: 'administrative',
               id: row.id
             }, {
-              population: vizData[row.id].population
+              population: populationData[row.id].population
             });
           }
         });
       }
 
       function afterLoad(e) {
-        if (e.sourceId === 'statesData' && e.isSourceLoaded) {
+        if (e.sourceId === 'maptilerCountries' && e.isSourceLoaded) {
           setTimeout(setStates, 1000);
           map.off('sourcedata', afterLoad);
         }
       }
 
-      if (map.isSourceLoaded('statesData')) {
+      if (map.isSourceLoaded('maptilerCountries')) {
         setStates();
       } else {
         map.on('sourcedata', afterLoad);
